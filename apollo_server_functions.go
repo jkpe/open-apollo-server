@@ -240,8 +240,8 @@ func selectFile(track *Spotify.Track) *Spotify.AudioFile {
 	for _, file := range track.GetFile() {
 		format := file.GetFormat()
 		if (format == Spotify.AudioFile_OGG_VORBIS_96 && selectedFile == nil) ||
-			(format == Spotify.AudioFile_OGG_VORBIS_320 && (selectedFile == nil || selectedFormat == Spotify.AudioFile_OGG_VORBIS_96)) ||
-			format == Spotify.AudioFile_OGG_VORBIS_160 {
+			(format == Spotify.AudioFile_OGG_VORBIS_160 && (selectedFile == nil || selectedFormat == Spotify.AudioFile_OGG_VORBIS_96)) ||
+			format == Spotify.AudioFile_OGG_VORBIS_320 {
 			selectedFormat = format
 			selectedFile = file
 		}
